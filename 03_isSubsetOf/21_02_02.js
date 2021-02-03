@@ -14,6 +14,7 @@ function isSubsetOf(base, sample) {
 
   const aux = function (from, currSample) {
     for (let i = from; i < base.length; i++) {
+      // length 안써서 오류남...
       if (currSample < base[i]) {
         return -1;
       }
@@ -34,3 +35,5 @@ function isSubsetOf(base, sample) {
   }
   return true;
 }
+
+// 정신차리자 16번째줄 length를 안써서 오류나는게 말이되냐 ㅠㅠㅠ
