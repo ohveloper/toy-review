@@ -1,19 +1,24 @@
-const bubbleSort = function (arr) {
-  const swap = function (idx1, idx2, arr) {
-    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-  };
-  const N = arr.length;
-  let swapped = 0;
-  for (let i = 0; i < N; i++) {
-    for (let j = 0; j < N - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        swapped++;
-        swap(j, j + 1, arr);
+const isSubsetOf = function (base, sample) {
+  base.sort((a, b) => a - b);
+  sample.sort((a, b) => a - b);
+  let aux = function (currSample, fromIdx) {
+    for (let i = fromIdx; i < base.length; i++) {
+      if (currSample < base[i]) {
+        return -1;
+      }
+      if (currSample === base[i]) {
+        return i;
       }
     }
-    if (swapped === 0) {
-      return arr;
+    return -1;
+  };
+  let idx = 0;
+  for (let i = 0; i < sample.length; i++) {
+    let curr = sample[i];
+    idx = aux(curr, idx);
+    if (idx === -1) {
+      return false;
     }
   }
-  return arr;
+  return true;
 };
