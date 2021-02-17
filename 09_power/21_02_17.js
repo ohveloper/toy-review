@@ -8,3 +8,6 @@ function power(base, exponent) {
   if (exponent % 2 === 1) return (base * result) % 94906249;
   else return result;
 }
+
+// 아무리 봐도 모르겠당.........
+// 자주봐서 외우장
