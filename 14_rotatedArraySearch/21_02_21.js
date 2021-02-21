@@ -7,3 +7,5 @@ const rotatedArraySearch = function (rotated, target) {
   }
   return -1;
 };
+
+// 가장 기본인 o(n) 시간복잡도
