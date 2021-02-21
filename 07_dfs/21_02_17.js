@@ -19,3 +19,5 @@ Node.prototype.addChild = function (child) {
   this.children.push(child);
   return child;
 };
+
+// 오랜만에 하니까 아예 초면이더라... 외우는건 한계가 있구나 이해하지
